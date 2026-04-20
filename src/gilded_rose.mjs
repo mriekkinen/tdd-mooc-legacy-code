@@ -15,17 +15,17 @@ export class Shop {
     for (var i = 0; i < this.items.length; i++) {
       const item = this.items[i];
       if (item.name == "Aged Brie" || item.name == "Backstage passes to a TAFKAL80ETC concert") {
-        if (this.items[i].quality < 50) {
-          this.items[i].quality = this.items[i].quality + 1;
-          if (this.items[i].name == "Backstage passes to a TAFKAL80ETC concert") {
-            if (this.items[i].sellIn < 11) {
-              if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality + 1;
+        if (item.quality < 50) {
+          item.quality++;
+          if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
+            if (item.sellIn < 11) {
+              if (item.quality < 50) {
+                item.quality++;
               }
             }
-            if (this.items[i].sellIn < 6) {
-              if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality + 1;
+            if (item.sellIn < 6) {
+              if (item.quality < 50) {
+                item.quality++;
               }
             }
           }
