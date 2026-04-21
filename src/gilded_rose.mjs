@@ -45,15 +45,23 @@ export class Shop {
       item.sellIn--;
 
       if (item.sellIn < 0) {
-        if (item.name == "Aged Brie") {
-          item.quality++;
-        } else if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
-          item.quality = 0;
-        } else if (item.name == "Conjured") {
-          item.quality--;
-          item.quality--;
-        } else {
-          item.quality--;
+        switch (item.name) {
+          case "Aged Brie": {
+            item.quality++;
+            break;
+          }
+          case "Backstage passes to a TAFKAL80ETC concert": {
+            item.quality = 0;
+            break;
+          }
+          case "Conjured": {
+            item.quality--;
+            item.quality--;
+            break;
+          }
+          default: {
+            item.quality--;
+          }
         }
       }
 
