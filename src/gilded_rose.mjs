@@ -18,16 +18,15 @@ export class Shop {
         continue;
       }
 
-      if (item.name == "Aged Brie" ||
-          item.name == "Backstage passes to a TAFKAL80ETC concert") {
+      if (item.name == "Aged Brie") {
         item.quality++;
-        if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
-          if (item.sellIn < 11) {
-            item.quality++;
-          }
-          if (item.sellIn < 6) {
-            item.quality++;
-          }
+      } else if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
+        item.quality++;
+        if (item.sellIn < 11) {
+          item.quality++;
+        }
+        if (item.sellIn < 6) {
+          item.quality++;
         }
       } else if (item.name == "Conjured") {
         item.quality--;
