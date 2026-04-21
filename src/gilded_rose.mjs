@@ -14,25 +14,32 @@ export class Shop {
   updateQuality() {
     for (var i = 0; i < this.items.length; i++) {
       const item = this.items[i];
-      if (item.name == "Sulfuras, Hand of Ragnaros") {
-        continue;
-      }
-
-      if (item.name == "Aged Brie") {
-        item.quality++;
-      } else if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
-        item.quality++;
-        if (item.sellIn < 11) {
-          item.quality++;
+      switch (item.name) {
+        case "Sulfuras, Hand of Ragnaros": {
+          continue;
         }
-        if (item.sellIn < 6) {
+        case "Aged Brie": {
           item.quality++;
+          break;
         }
-      } else if (item.name == "Conjured") {
-        item.quality--;
-        item.quality--;
-      } else {
-        item.quality--;
+        case "Backstage passes to a TAFKAL80ETC concert": {
+          item.quality++;
+          if (item.sellIn < 11) {
+            item.quality++;
+          }
+          if (item.sellIn < 6) {
+            item.quality++;
+          }
+          break;
+        }
+        case "Conjured": {
+          item.quality--;
+          item.quality--;
+          break;
+        }
+        default: {
+          item.quality--;
+        }
       }
 
       item.sellIn--;
