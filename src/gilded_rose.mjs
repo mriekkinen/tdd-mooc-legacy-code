@@ -29,6 +29,9 @@ export class Shop {
             item.quality++;
           }
         }
+      } else if (item.name == "Conjured") {
+        item.quality--;
+        item.quality--;
       } else {
         item.quality--;
       }
@@ -40,6 +43,9 @@ export class Shop {
           item.quality++;
         } else if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
           item.quality = 0;
+        } else if (item.name == "Conjured") {
+          item.quality--;
+          item.quality--;
         } else {
           item.quality--;
         }
